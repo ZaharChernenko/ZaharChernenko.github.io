@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Захар Черненко — Резюме & Портфолио</title>
+  <meta name="description" content="Резюме и портфолио Захара Черненко. Backend Developer (Python / C++). Опыт в Т-Банке и Яндексе. Chicago95 тема.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="chicago-body">
+
+  <!-- Main Website Container styled in Chicago95 / XFCE Redmond -->
+  <div class="site-window" id="main-site-window">
+    
+    <!-- Title Bar -->
+    <header class="title-bar">
+      <span class="title-text">Захар Черненко — Резюме</span>
+    </header>
+
+    <!-- Menu Bar -->
+    <nav class="window-menubar no-print">
+      <div class="menu-dropdown-wrapper">
+        <button class="menu-btn" id="menu-file"><u>Ф</u>айл</button>
+        <div class="menu-dropdown" id="dropdown-file">
+          <div class="dropdown-item" id="action-print">
+            <span>Печать / Сохранить в PDF</span>
+            <span class="shortcut">Ctrl+P</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-dropdown-wrapper">
+        <button class="menu-btn" id="menu-view"><u>В</u>ид</button>
+        <div class="menu-dropdown" id="dropdown-view">
+          <div class="dropdown-item tab-action" data-tab="tab-all">Все разделы</div>
+          <div class="dropdown-item tab-action" data-tab="tab-exp">Только опыт работы</div>
+          <div class="dropdown-item tab-action" data-tab="tab-edu">Только образование</div>
+          <div class="dropdown-item tab-action" data-tab="tab-skills">Только навыки</div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Window Content Area -->
+    <div class="window-body-container" id="window-body">
+
+      <!-- Header Hero Card (Sunken Inset Frame) -->
+      <section class="hero-frame">
+        <div class="hero-left">
+          <h1 class="hero-name">Черненко Захар</h1>
+        </div>
+        <div class="hero-right no-print">
+          <div class="contact-box">
+            <div class="contact-box-title">Ссылки для связи:</div>
+            <a href="https://github.com/ZaharChernenko" target="_blank" rel="noopener" class="retro-btn link-btn">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.44 9.8 8.21 11.39.6.11.82-.26.82-.57 0-.29-.01-1.23-.01-2.24-3.02.56-3.8-.74-4.04-1.41-.14-.35-.72-1.41-1.23-1.7-.42-.23-1.02-.78-.02-.8 0.95-.01 1.62.87 1.85 1.23 1.08 1.82 2.81 1.31 3.5.99.11-.78.42-1.31.77-1.61-2.67-.3-5.46-1.34-5.46-5.93 0-1.31.47-2.39 1.23-3.23-.12-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.41 3-.41s2.04.14 3 .41c2.29-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.23 0 4.61-2.81 5.63-5.48 5.93.44.38.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.3 0 .32.22.7.83.57A12.02 12.02 0 0028 16c0-6.63-5.37-12-12-12z"/></svg>
+              <span>github.com/ZaharChernenko</span>
+            </a>
+            <a href="https://gitlab.com/ZaharChernenko" target="_blank" rel="noopener" class="retro-btn link-btn">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="m25.6 13.6-1.8-5.5c-.2-.6-.8-.8-1.3-.5-.3.2-.4.4-.5.7l-2.2 6.8h-7.6l-2.2-6.8c-.2-.6-.8-.8-1.3-.5-.3.2-.4.4-.5.7L6.4 13.6c-.2.5 0 .9.3 1.2l9.3 7.5 9.3-7.5c.3-.3.5-.7.3-1.2z" fill="#fc6d26"/></svg>
+              <span>gitlab.com/ZaharChernenko</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Print-only Contacts (visible only on paper / PDF export) -->
+      <div class="print-contacts">
+        <span>GitHub: github.com/ZaharChernenko</span>
+        <span>GitLab: gitlab.com/ZaharChernenko</span>
+      </div>
+
+      <!-- Chicago95 Classic Tabs Navigation -->
+      <div class="tabs-header no-print" role="tablist">
+        <button class="retro-tab active" data-tab="tab-all" role="tab" aria-selected="true">
+          <span>📁 Все разделы</span>
+        </button>
+        <button class="retro-tab" data-tab="tab-exp" role="tab" aria-selected="false">
+          <span>💼 Опыт работы</span>
+        </button>
+        <button class="retro-tab" data-tab="tab-edu" role="tab" aria-selected="false">
+          <span>🎓 Образование</span>
+        </button>
+        <button class="retro-tab" data-tab="tab-skills" role="tab" aria-selected="false">
+          <span>⚙️ Навыки</span>
+        </button>
+      </div>
+
+      <!-- Tab Content Area -->
+      <div class="tabs-body">
+
+        <!-- SECTION: EXPERIENCE -->
+        <fieldset class="retro-groupview tab-section" id="sec-exp">
+          <legend class="retro-legend">ОПЫТ РАБОТЫ</legend>
+
+          <!-- Job 1 -->
+          <div class="job-item">
+            <div class="job-header">
+              <div class="job-company-title">
+                <span class="job-company">Т-Банк</span>
+                <span class="job-role">Младший Backend-разработчик</span>
+              </div>
+              <span class="job-dates">АВГ 2025 — ФЕВ 2026 · 7 мес</span>
+            </div>
+            <div class="job-dept">ОТДЕЛ РАЗРАБОТКИ ИНТЕЛЛЕКТУАЛЬНЫХ ДИАЛОГОВЫХ СИСТЕМ</div>
+            <p class="job-lead">
+              Развитие чат-бота поддержки экосистемы (Т-Банк, Т-Инвестиции, веб). Повышение качества автоответов и интеграция ML-моделей в диалоговый контур.
+            </p>
+
+            <div class="job-task-card">
+              <div class="task-card-title">■ Миграция сервиса классификации обращений</div>
+              <p class="task-card-text">
+                Заменил устаревший ElasticSearch-классификатор на ML-модель. Реализовал интеграцию и A/B-тестирование внутри сервиса классификации и основного консьюмера на Python, успешно запустив сервис в продакшен.
+              </p>
+            </div>
+
+            <div class="job-task-card">
+              <div class="task-card-title">■ Внедрение мониторинга и рефакторинг компонентов на базе ИИ</div>
+              <p class="task-card-text">
+                Провёл рефакторинг легаси-компонентов: выстроил расширяемую ООП-архитектуру на Python и создал унифицированный интерфейс для LLM-запросов. Внедрил сбор продуктовых метрик в Prometheus, настроил дашборды в Grafana, разработал систему алертинга Multi-Window Multi-Burn Rate на TypeScript и подготовил SRE-ранбуки. В результате сократилось время реакции на инциденты, а интерфейс стал переиспользоваться другими разработчиками.
+              </p>
+            </div>
+
+            <div class="job-misc-block">
+              <div class="misc-label">Прочие задачи:</div>
+              <ul class="retro-bullet-list">
+                <li>Интеграция с корпоративной CMS для безопасной отправки документов в чате.</li>
+                <li>Участие в регулярных On-call дежурствах для обеспечения отказоустойчивости сервисов, код-ревью.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Job 2 -->
+          <div class="job-item">
+            <div class="job-header">
+              <div class="job-company-title">
+                <span class="job-company">Т-Банк</span>
+                <span class="job-role">Стажёр Backend-разработчик</span>
+              </div>
+              <span class="job-dates">АПР 2025 — АВГ 2025 · 5 мес</span>
+            </div>
+            <div class="job-dept">ОТДЕЛ РАЗРАБОТКИ ИНТЕЛЛЕКТУАЛЬНЫХ ДИАЛОГОВЫХ СИСТЕМ (ПОДКОМАНДА RAG)</div>
+            <p class="job-lead">
+              В команде из 2 человек разрабатывал новый микросервис на основе RAG с использованием внутреннего RAG as a Service.
+            </p>
+
+            <div class="job-task-card">
+              <div class="task-card-title">■ Повышение надёжности инфраструктуры сервиса</div>
+              <p class="task-card-text">
+                Разработал Helm-чарт, задеплоил сервис во второй кластер Kubernetes и настроил L7-балансировку трафика для обеспечения высокой доступности при сбоях кластера. Покрыл сервис метриками Prometheus и выстроил дашборды в Grafana.
+              </p>
+            </div>
+
+            <div class="job-task-card">
+              <div class="task-card-title">■ Оптимизация логики взаимодействия микросервисов</div>
+              <p class="task-card-text">
+                Устранил рассинхронизацию данных между сервисами диалоговой платформы: согласовал новый формат передачи данных и переписал логику обработки сообщений на Python на стороне обоих микросервисов. Это снизило объём ложных переключений клиентов на живых операторов.
+              </p>
+            </div>
+
+            <div class="job-misc-block">
+              <div class="misc-label">Прочие задачи:</div>
+              <ul class="retro-bullet-list">
+                <li>Интеграция с сервисом динамической конфигурации (аналог Flagr) без перезапуска сервиса.</li>
+                <li>Сопровождение релизных циклов микросервиса, написание модульных тестов на pytest.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Job 3 -->
+          <div class="job-item">
+            <div class="job-header">
+              <div class="job-company-title">
+                <span class="job-company">Яндекс</span>
+                <span class="job-role">Стажёр Backend-разработчик</span>
+              </div>
+              <span class="job-dates">ИЮН 2024 — ОКТ 2024 · 5 мес</span>
+            </div>
+            <div class="job-dept">УНИВЕРСАЛЬНЫЙ ПОИСК, МЕДИЦИНСКИЙ СРЕЗ</div>
+            <p class="job-lead">
+              Разработка тематических поисковых блоков (врачи и клиники). Агрегация данных из Яндекс.Вебмастера и внешних медицинских порталов.
+            </p>
+
+            <div class="job-task-card">
+              <div class="task-card-title">■ Автоматизация обработки дефектов в анкетах врачей</div>
+              <p class="task-card-text">
+                Спроектировал новый воркфлоу обращений в Yandex Tracker и разработал ETL-пайплайн на Python (платформа Nirvana, вычисления YTsaurus). Большинство типовых проблем с данными стали решаться автоматически без участия дежурных инженеров.
+              </p>
+            </div>
+
+            <div class="job-task-card">
+              <div class="task-card-title">■ Улучшение определения топонима в поисковом запросе</div>
+              <p class="task-card-text">
+                Интегрировал сервис геоопределения (C++, Protobuf) для точного выделения географических сущностей из запроса пользователя. Провёл офлайн-тестирование и запустил A/B тестирование в продакшене.
+              </p>
+            </div>
+
+            <div class="job-task-card">
+              <div class="task-card-title">■ Оптимизация обработки офлайн-таблицы</div>
+              <p class="task-card-text">
+                Переписал этап обработки данных на C++ с последовательного алгоритма на параллельный MapReduce (YTsaurus), сократив время расчёта с 60 до 5 минут (ускорение в 12 раз).
+              </p>
+            </div>
+
+            <div class="job-misc-block">
+              <div class="misc-label">Прочие задачи:</div>
+              <ul class="retro-bullet-list">
+                <li>Исправление микроразметки, покрытие функциональности тестами на gtest.</li>
+              </ul>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- SECTION: EDUCATION -->
+        <fieldset class="retro-groupview tab-section" id="sec-edu">
+          <legend class="retro-legend">ОБРАЗОВАНИЕ</legend>
+          <div class="edu-list">
+            <div class="edu-row">
+              <div class="edu-text">
+                <div class="edu-name">Санкт-Петербургский государственный университет промышленных технологий и дизайна</div>
+                <div class="edu-degree">Прикладная информатика (Бакалавриат)</div>
+              </div>
+              <span class="edu-period">2022 — 2026</span>
+            </div>
+            <div class="edu-row">
+              <div class="edu-text">
+                <div class="edu-name">Санкт-Петербургский политехнический университет Петра Великого</div>
+                <div class="edu-degree">Программная инженерия (Неоконченное высшее)</div>
+              </div>
+              <span class="edu-period">2021 — 2022</span>
+            </div>
+            <div class="edu-row">
+              <div class="edu-text">
+                <div class="edu-name">Лицей №344</div>
+                <div class="edu-degree">Физико-математический профиль (Среднее общее образование)</div>
+              </div>
+              <span class="edu-period">2021</span>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- SECTION: SKILLS -->
+        <fieldset class="retro-groupview tab-section" id="sec-skills">
+          <legend class="retro-legend">НАВЫКИ</legend>
+          <div class="skills-grid">
+            <div class="skill-category-row">
+              <div class="skill-label">ЯЗЫКИ:</div>
+              <div class="skill-chips">
+                <span class="chip">Русский (родной)</span>
+                <span class="chip">Английский — B2</span>
+              </div>
+            </div>
+            <div class="skill-category-row">
+              <div class="skill-label">ЯЗЫКИ ПРОГРАММИРОВАНИЯ:</div>
+              <div class="skill-chips">
+                <span class="chip active-tech">Python</span>
+                <span class="chip active-tech">C++</span>
+              </div>
+            </div>
+            <div class="skill-category-row">
+              <div class="skill-label">СУБД И ХРАНИЛИЩА:</div>
+              <div class="skill-chips">
+                <span class="chip">SQL</span>
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">Redis</span>
+                <span class="chip">YTsaurus (MapReduce)</span>
+              </div>
+            </div>
+            <div class="skill-category-row">
+              <div class="skill-label">DEVOPS И ИНФРАСТРУКТУРА:</div>
+              <div class="skill-chips">
+                <span class="chip">Linux</span>
+                <span class="chip">Docker</span>
+                <span class="chip">Kubernetes</span>
+                <span class="chip">Helm</span>
+                <span class="chip">GitLab CI/CD</span>
+                <span class="chip">Prometheus</span>
+                <span class="chip">Grafana</span>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

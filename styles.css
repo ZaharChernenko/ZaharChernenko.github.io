@@ -1,0 +1,630 @@
+/* ==========================================================================
+   CHICAGO95 / XFCE REDMOND WEBSITE THEME
+   Portfolio & Resume for Zahar Chernenko
+   ========================================================================== */
+
+:root {
+  /* Chicago95 Classic Palette */
+  --c95-bg-canvas: #2e6262;        /* Classic retro muted teal canvas */
+  --c95-gray: #c0c0c0;             /* Standard 95 widget gray */
+  --c95-light-gray: #dfdfdf;       /* 3D highlight inner */
+  --c95-white: #ffffff;            /* 3D highlight outer */
+  --c95-dark-gray: #808080;        /* 3D shadow inner */
+  --c95-black: #000000;            /* 3D shadow outer */
+
+  --c95-navy-start: #000080;       /* Active titlebar navy */
+  --c95-navy-end: #1084d0;         /* Active titlebar blue gradient */
+  
+  --c95-text-main: #000000;
+  --c95-text-muted: #555555;
+  --c95-link: #0000aa;
+  
+  --c95-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
+  --c95-font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* ==========================================================================
+   Reset & Canvas
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+body.chicago-body {
+  background-color: var(--c95-bg-canvas);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 8px 8px;
+  font-family: var(--c95-font-sans);
+  color: var(--c95-text-main);
+  min-height: 100vh;
+  padding: 24px 16px 48px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   Main Site Window (Chicago95 Window Container)
+   ========================================================================== */
+.site-window {
+  width: 100%;
+  max-width: 860px;
+  background-color: var(--c95-gray);
+  box-shadow: inset 1px 1px 0px var(--c95-white),
+              inset -1px -1px 0px var(--c95-black),
+              inset 2px 2px 0px var(--c95-light-gray),
+              inset -2px -2px 0px var(--c95-dark-gray),
+              4px 6px 20px rgba(0, 0, 0, 0.45);
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+  transition: max-width 0.2s ease;
+}
+
+.site-window.maximized-view {
+  max-width: 98vw;
+}
+
+/* ==========================================================================
+   Title Bar
+   ========================================================================== */
+.title-bar {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  background: linear-gradient(90deg, var(--c95-navy-start) 0%, var(--c95-navy-end) 100%);
+  color: var(--c95-white);
+  font-weight: 700;
+  font-size: 12px;
+  user-select: none;
+}
+
+.title-text {
+  letter-spacing: 0.3px;
+}
+
+/* ==========================================================================
+   Window Menu Bar
+   ========================================================================== */
+.window-menubar {
+  display: flex;
+  align-items: center;
+  background-color: var(--c95-gray);
+  padding: 2px 6px;
+  border-bottom: 1px solid var(--c95-dark-gray);
+  font-size: 12px;
+  user-select: none;
+  position: relative;
+}
+
+.menu-dropdown-wrapper {
+  position: relative;
+}
+
+.menu-btn {
+  background: transparent;
+  border: none;
+  padding: 3px 8px;
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  color: var(--c95-black);
+}
+
+.menu-btn:hover,
+.menu-btn.active {
+  background-color: var(--c95-navy-start);
+  color: var(--c95-white);
+}
+
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--c95-gray);
+  box-shadow: inset 1px 1px 0px var(--c95-white),
+              inset -1px -1px 0px var(--c95-black),
+              inset 2px 2px 0px var(--c95-light-gray),
+              inset -2px -2px 0px var(--c95-dark-gray),
+              2px 3px 8px rgba(0, 0, 0, 0.35);
+  min-width: 170px;
+  z-index: 1000;
+  padding: 2px;
+}
+
+.menu-dropdown.active {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: var(--c95-black);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: var(--c95-navy-start);
+  color: var(--c95-white);
+}
+
+.shortcut {
+  color: #666;
+  font-size: 10px;
+}
+.dropdown-item:hover .shortcut {
+  color: #ddd;
+}
+
+.menubar-right {
+  margin-left: auto;
+}
+
+.menubar-badge {
+  font-size: 10px;
+  color: var(--c95-dark-gray);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Window Body Area
+   ========================================================================== */
+.window-body-container {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Hero Frame (Sunken Well) */
+.hero-frame {
+  background-color: #ffffff;
+  box-shadow: inset 1px 1px 0px var(--c95-dark-gray),
+              inset -1px -1px 0px var(--c95-white),
+              inset 2px 2px 0px var(--c95-black),
+              inset -2px -2px 0px var(--c95-light-gray);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--c95-navy-start);
+  line-height: 1.15;
+}
+
+.hero-right {
+  flex-shrink: 0;
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: var(--c95-gray);
+  padding: 8px;
+  box-shadow: inset 1px 1px 0px var(--c95-white),
+              inset -1px -1px 0px var(--c95-black),
+              inset 2px 2px 0px var(--c95-light-gray),
+              inset -2px -2px 0px var(--c95-dark-gray);
+}
+
+.contact-box-title {
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--c95-navy-start);
+  text-transform: uppercase;
+}
+
+.retro-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-family: inherit;
+  font-size: 11px;
+  color: var(--c95-black);
+  text-decoration: none;
+  background-color: var(--c95-gray);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: inset 1px 1px 0px var(--c95-white),
+              inset -1px -1px 0px var(--c95-black),
+              inset 2px 2px 0px var(--c95-light-gray),
+              inset -2px -2px 0px var(--c95-dark-gray);
+}
+
+.retro-btn:active {
+  box-shadow: inset 1px 1px 0px var(--c95-black),
+              inset -1px -1px 0px var(--c95-white),
+              inset 2px 2px 0px var(--c95-dark-gray),
+              inset -2px -2px 0px var(--c95-light-gray);
+  padding: 5px 9px 3px 11px;
+}
+
+.btn-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.print-contacts {
+  display: none;
+}
+
+/* ==========================================================================
+   Chicago95 Classic Tabs
+   ========================================================================== */
+.tabs-header {
+  display: flex;
+  gap: 3px;
+  padding-left: 6px;
+  margin-bottom: -2px;
+  z-index: 5;
+  user-select: none;
+  flex-wrap: wrap;
+}
+
+.retro-tab {
+  background-color: var(--c95-gray);
+  border: none;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--c95-black);
+  padding: 4px 12px 3px;
+  cursor: pointer;
+  box-shadow: inset 1px 1px 0px var(--c95-white),
+              inset -1px 0px 0px var(--c95-black),
+              inset 2px 2px 0px var(--c95-light-gray),
+              inset -2px 0px 0px var(--c95-dark-gray);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  position: relative;
+}
+
+.retro-tab:hover {
+  background-color: #d6d6d6;
+}
+
+.retro-tab.active {
+  background-color: var(--c95-gray);
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-top: -3px;
+  box-shadow: inset 1px 1px 0px var(--c95-white),
+              inset -1px 0px 0px var(--c95-black),
+              inset 2px 2px 0px var(--c95-light-gray),
+              inset -2px 0px 0px var(--c95-dark-gray);
+  z-index: 10;
+  border-bottom: 2px solid var(--c95-gray);
+}
+
+/* Tabs Body Container */
+.tabs-body {
+  background-color: var(--c95-gray);
+  box-shadow: inset 1px 1px 0px var(--c95-white),
+              inset -1px -1px 0px var(--c95-black),
+              inset 2px 2px 0px var(--c95-light-gray),
+              inset -2px -2px 0px var(--c95-dark-gray);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   Group Boxes (Fieldset / Legend)
+   ========================================================================== */
+.retro-groupview {
+  border: 2px groove #dfdfdf;
+  padding: 12px 14px 14px;
+  background-color: var(--c95-gray);
+}
+
+.retro-legend {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--c95-navy-start);
+  padding: 0 6px;
+  letter-spacing: 0.5px;
+}
+
+/* Job Cards */
+.job-item {
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px dotted var(--c95-dark-gray);
+}
+
+.job-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.job-company-title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.job-company {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--c95-black);
+}
+
+.job-role {
+  font-size: 12px;
+  font-weight: 600;
+  color: #222;
+}
+
+.job-dates {
+  font-size: 11px;
+  color: #555;
+  white-space: nowrap;
+}
+
+.job-dept {
+  font-size: 10px;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 6px;
+}
+
+.job-lead {
+  font-size: 12px;
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.job-task-card {
+  background-color: #f7f7f7;
+  border: 1px solid #d0d0d0;
+  padding: 6px 10px;
+  margin-bottom: 6px;
+}
+
+.task-card-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--c95-navy-start);
+  margin-bottom: 2px;
+}
+
+.task-card-text {
+  font-size: 11px;
+  line-height: 1.45;
+  color: #111;
+}
+
+.job-misc-block {
+  margin-top: 6px;
+}
+
+.misc-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #555;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.retro-bullet-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.retro-bullet-list li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 11px;
+  line-height: 1.45;
+  margin-bottom: 2px;
+}
+
+.retro-bullet-list li::before {
+  content: "–";
+  position: absolute;
+  left: 2px;
+  color: #666;
+}
+
+/* Education List */
+.edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 6px 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #dcdcdc;
+}
+
+.edu-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--c95-black);
+}
+
+.edu-degree {
+  font-size: 11px;
+  color: #444;
+}
+
+.edu-period {
+  font-size: 11px;
+  color: #666;
+  white-space: nowrap;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-category-row {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 6px;
+}
+
+.skill-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--c95-navy-start);
+  text-transform: uppercase;
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.chip {
+  background-color: #ffffff;
+  padding: 2px 7px;
+  font-size: 11px;
+  box-shadow: inset 1px 1px 0px var(--c95-white),
+              inset -1px -1px 0px var(--c95-black),
+              inset 2px 2px 0px var(--c95-light-gray),
+              inset -2px -2px 0px var(--c95-dark-gray);
+  color: #111;
+}
+
+.chip.active-tech {
+  background-color: #eef3ff;
+  font-weight: 700;
+  color: var(--c95-navy-start);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 680px) {
+  body.chicago-body {
+    padding: 8px 4px 24px;
+  }
+
+  .hero-frame {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-right {
+    width: 100%;
+  }
+
+  .contact-box {
+    width: 100%;
+  }
+
+  .skill-category-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+/* ==========================================================================
+   Print Stylesheet (Pure Clean Printable Resume)
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm;
+  }
+
+  body.chicago-body {
+    background: #ffffff !important;
+    padding: 0 !important;
+  }
+
+  .site-window {
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .title-bar,
+  .window-menubar,
+  .tabs-header,
+  .window-statusbar,
+  .no-print {
+    display: none !important;
+  }
+
+  .hero-frame {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 0 12px 0 !important;
+    border-bottom: 2px solid #000080 !important;
+  }
+
+  .print-contacts {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    font-size: 11px;
+    font-family: var(--c95-font-mono);
+    margin-bottom: 14px;
+  }
+
+  .tabs-body {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .tab-section {
+    display: block !important;
+    border: 1px solid #999 !important;
+    background: #fff !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
